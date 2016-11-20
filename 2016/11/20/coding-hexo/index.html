@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>在Coding上搭建Hexo博客 | UnaEyre</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo," />
+  
+
+  <meta name="description" content="在Coding上搭建Hexo静态博客
+简单易懂，新手也能快速上手搭建一个属于自己的静态博客。
+因为自己在搭建过程中踩了很多坑，正好写下这篇博客记录自己的心得，也分享给其他需要的人。
+搭建方法千千万，但整体过程是差不多的，这里只介绍我自己的搭建过程，正式在coding上成功搭了三遍才写下这篇博客的，废话说了那么多，现在开始进入正题吧！
+
+准备工作
+安装git
+安装node.js
+注册coding账号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Coding上搭建Hexo博客">
+<meta property="og:url" content="http://UnaEyre.coding.me/2016/11/20/coding-hexo/index.html">
+<meta property="og:site_name" content="UnaEyre">
+<meta property="og:description" content="在Coding上搭建Hexo静态博客
+简单易懂，新手也能快速上手搭建一个属于自己的静态博客。
+因为自己在搭建过程中踩了很多坑，正好写下这篇博客记录自己的心得，也分享给其他需要的人。
+搭建方法千千万，但整体过程是差不多的，这里只介绍我自己的搭建过程，正式在coding上成功搭了三遍才写下这篇博客的，废话说了那么多，现在开始进入正题吧！
+
+准备工作
+安装git
+安装node.js
+注册coding账号">
+<meta property="og:updated_time" content="2016-11-20T14:24:27.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Coding上搭建Hexo博客">
+<meta name="twitter:description" content="在Coding上搭建Hexo静态博客
+简单易懂，新手也能快速上手搭建一个属于自己的静态博客。
+因为自己在搭建过程中踩了很多坑，正好写下这篇博客记录自己的心得，也分享给其他需要的人。
+搭建方法千千万，但整体过程是差不多的，这里只介绍我自己的搭建过程，正式在coding上成功搭了三遍才写下这篇博客的，废话说了那么多，现在开始进入正题吧！
+
+准备工作
+安装git
+安装node.js
+注册coding账号">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在Coding上搭建Hexo静态博客"><span class="toc-text">在Coding上搭建Hexo静态博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo的安装和使用"><span class="toc-text">Hexo的安装和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到Coding"><span class="toc-text">部署到Coding</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-coding-hexo" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">在Coding上搭建Hexo博客</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.11.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>UnaEyre</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://unaeyre.coding.me/2016/11/20/coding-hexo/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="在Coding上搭建Hexo静态博客"><a href="#在Coding上搭建Hexo静态博客" class="headerlink" title="在Coding上搭建Hexo静态博客"></a>在Coding上搭建Hexo静态博客</h1><blockquote>
+<p>简单易懂，新手也能快速上手搭建一个属于自己的静态博客。</p>
+<p>因为自己在搭建过程中踩了很多坑，正好写下这篇博客记录自己的心得，也分享给其他需要的人。</p>
+<p>搭建方法千千万，但整体过程是差不多的，这里只介绍我自己的搭建过程，正式在coding上成功搭了三遍才写下这篇博客的，废话说了那么多，现在开始进入正题吧！</p>
+</blockquote>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>安装git</li>
+<li>安装node.js</li>
+<li>注册coding账号并绑定邮箱(自己就因为没绑定邮箱出错了~)</li>
+</ul>
+<h3 id="Hexo的安装和使用"><a href="#Hexo的安装和使用" class="headerlink" title="Hexo的安装和使用"></a>Hexo的安装和使用</h3><ul>
+<li><p>全局安装hexo和hexo的运行环境</p>
+<p>  npm install hexo</p>
+<p>  npm install hexo-cli</p>
+<p>  我也看到过直接执行 npm install hexo-cli命令，两种我都试过，具体区别也没研究，我们也没必要省一句代码，两句都执行就好了。</p>
+</li>
+<li><p>初始化项目名</p>
+<p>  项目名可以任意，这里以blog作为例子</p>
+<p>  hexo blog</p>
+</li>
+<li><p>运行Hexo</p>
+<p>  cd blog</p>
+<p>  hexo server(可以简写成hexo s)</p>
+<p>  在本地查看<a href="http://localhost:4000就可以浏览到Hexo的默认主题了，到这里本地搭建就成功了。" target="_blank" rel="external">http://localhost:4000就可以浏览到Hexo的默认主题了，到这里本地搭建就成功了。</a></p>
+</li>
+</ul>
+<h3 id="部署到Coding"><a href="#部署到Coding" class="headerlink" title="部署到Coding"></a>部署到Coding</h3><ul>
+<li><p>在coding上新建一个与用户名同名的项目，注意项目名必须跟用户名一模一样，然后开启pages服务，分支默认名为coding-pages，可以修改也可以不改，这里我将它改成master。</p>
+</li>
+<li><p>本地生成ssh证书</p>
+<p>  执行ssh-keygen -t rsa -C username@example.com (你自己注册coding的邮箱地址)</p>
+<p>  把生成的公钥(~/.ssh/id_rsa.pub)里的内容全部拷贝到coding个人账户下的ssh公钥里</p>
+</li>
+<li><p>在hexo生成的blog(这个blog就是前面初始化的项目名)里找到_config.yml文件打开翻到最下面加上deploy配置</p>
+<p>  deploy: </p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;type:&nbsp;&nbsp;git</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;repo:&nbsp;&nbsp;git@git.coding.net:username/username.git</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;branch:&nbsp;&nbsp;branch</p>
+<p>  注意格式type：后面有一个空格，要严格按照格式，下面的也类似，每行开头也要空两格。</p>
+</li>
+<li><p>生成静态文件并发布到coding</p>
+<p>  执行hexo generate(也可以简写成hexo g)</p>
+<p>  hexo deploy(也可以简写成hexo d)</p>
+<p>  在执行hexo deploy报错说找不到git命令时，执行 npm install hexo-deployer-git –<br>  save再次执行hexo deploy就行啦。</p>
+<p>  访问<a href="http://username.coding.me就可以看到自己部署的博客啦。" target="_blank" rel="external">http://username.coding.me就可以看到自己部署的博客啦。</a></p>
+</li>
+</ul>
+<blockquote>
+<p>最后再说两句自己踩的坑，因为自己有两个coding账号并且之前一个全局设置了user.name和user.email导致提交代码出错~所以各位小伙伴要避免这种小错误啦~如果你按照我说的并没有搭建成功，出错了记得google，我也是这样一步步来的，因为其中还牵涉到一些环境变量的配置，我自己搭建的时候就碰到有配置环境变量成功也有没配置也成功的。写下来发现就这么点，可对于新手来说自己折腾也是要一点时间的，希望大家都能成功搭建自己的博客~</p>
+</blockquote>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'unaeyre';
+    
+    var disqus_url = 'http://UnaEyre.coding.me/2016/11/20/coding-hexo/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//unaeyre.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
