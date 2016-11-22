@@ -29,7 +29,7 @@
 
 在GitHub上搭建Hexo博客跟在Coding上差不多，但还是有点细微差别。这里主要介绍下区别，详细的参考在Coding上搭建Hexo博客
 在GitHub上创建名为username.github.io的仓库(repository)，us">
-<meta property="og:updated_time" content="2016-11-22T15:29:15.357Z">
+<meta property="og:updated_time" content="2016-11-22T15:33:14.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同时在GitHub和Coding上搭建Hexo">
 <meta name="twitter:description" content="同时在GitHub和Coding上搭建Hexo博客
@@ -205,9 +205,9 @@
 </li>
 <li><p>创建好仓库之后修改_config.yml里面的配置</p>
 <pre><code>deploy:     
-  type: git
-  repo: git@github.com:username/username.github.io.git
-  branch: master
+    type: git
+    repo: git@github.com:username/username.github.io.git
+    branch: master
 </code></pre></li>
 <li><p>执行下面命令，遇到问题可以到<a href="http://unaeyre.coding.me/2016/11/20/在Coding上搭建Hexo博客/">在Coding上搭建Hexo博客</a>里面找</p>
 <pre><code>hexo g
@@ -217,12 +217,12 @@ hexo d
 </li>
 <li><p>现在分别在GitHub和Coding上搭建好博客了，要想同时搭建，只需要修改_config.yml里面的配置</p>
 <pre><code>deploy:     
-- type: git
-  repo: git@github.com:username/username.github.io.git
-  branch: master        
-- type: git
-  repo: git@git.coding.net:username/username.git
-  branch: master
+ -  type: git
+    repo: git@github.com:username/username.github.io.git
+    branch: master        
+ -  type: git
+    repo: git@git.coding.net:username/username.git
+    branch: master
 </code></pre></li>
 <li><p>注意前面的符号-和一个空格，不要漏了，我自己就因为漏了导致折腾了半天~~~</p>
 </li>
