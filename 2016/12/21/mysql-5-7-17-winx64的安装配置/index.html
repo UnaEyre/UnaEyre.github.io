@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>mysql-5.7.17-winx64的安装配置 | UnaEyre</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mysql-5.7.17-winx64的安装配置," />
+  
+
+  <meta name="description" content="下了个mysql-5.7.17-winx64，安装过程真是~~趁着还有点印象赶紧写下来。
+
+
+1：下载mysql-5.7.17-winx64解压版本：http://dev.mysql.com/downloads/mysql/
+
+2 ：解压到安装目录，如：D:\mysql-5.7.17-winx64
+
+3：设置环境变量 
+操作如下：
+   1）我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql-5.7.17-winx64的安装配置">
+<meta property="og:url" content="http://UnaEyre.coding.me/2016/12/21/mysql-5-7-17-winx64的安装配置/index.html">
+<meta property="og:site_name" content="UnaEyre">
+<meta property="og:description" content="下了个mysql-5.7.17-winx64，安装过程真是~~趁着还有点印象赶紧写下来。
+
+
+1：下载mysql-5.7.17-winx64解压版本：http://dev.mysql.com/downloads/mysql/
+
+2 ：解压到安装目录，如：D:\mysql-5.7.17-winx64
+
+3：设置环境变量 
+操作如下：
+   1）我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;">
+<meta property="og:image" content="http://unaeyre.coding.me/store/images/mysql.png">
+<meta property="og:updated_time" content="2016-12-21T08:13:10.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql-5.7.17-winx64的安装配置">
+<meta name="twitter:description" content="下了个mysql-5.7.17-winx64，安装过程真是~~趁着还有点印象赶紧写下来。
+
+
+1：下载mysql-5.7.17-winx64解压版本：http://dev.mysql.com/downloads/mysql/
+
+2 ：解压到安装目录，如：D:\mysql-5.7.17-winx64
+
+3：设置环境变量 
+操作如下：
+   1）我的电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;">
+<meta name="twitter:image" content="http://unaeyre.coding.me/store/images/mysql.png">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/una.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-mysql-5-7-17-winx64的安装配置" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">mysql-5.7.17-winx64的安装配置</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.12.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>UnaEyre</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://unaeyre.coding.me/2016/12/21/mysql-5-7-17-winx64的安装配置/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>下了个mysql-5.7.17-winx64，安装过程真是~~趁着还有点印象赶紧写下来。</p>
+</blockquote>
+<ul>
+<li><p>1：下载mysql-5.7.17-winx64解压版本：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a><br><img src="http://unaeyre.coding.me/store/images/mysql.png" alt="mysql-5.7.17-winx64"></p>
+</li>
+<li><p>2 ：解压到安装目录，如：D:\mysql-5.7.17-winx64</p>
+</li>
+<li><p>3：设置环境变量 </p>
+<pre><code>操作如下：
+   1）我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量      
+       点击系统变量下的新建按钮      
+       输入变量名：MYSQL_HOME      输入变量值：D:\mysql-5.7.17-winx64    
+   2）选择系统变量中的Path      
+       点击编辑按钮      
+       在变量值中添加变量值：%MYSQL_HOME%\bin;  
+</code></pre></li>
+<li><p>4：第四步：复制my-default.ini，重命名为my.ini,修改my.ini文件</p>
+<pre><code>[client]    
+ port=3306  
+ default-character-set=utf8    
+ [mysqld]             
+ port=3306    
+ character_set_server=utf8    
+ basedir=%MYSQL_HOME%   
+ datadir=%MYSQL_HOME%\data       
+ [WinMySQLAdmin]    
+ %MYSQL_HOME%\bin\mysqld.exe
+</code></pre></li>
+<li><p>5：将mysql注册为windows系统服务</p>
+<pre><code>1）以管理员身份运行cmd,从控制台进入到MySQL解压目录下的 bin 目录下：
+ 2）输入服务安装命令：  mysqld.exe -install    
+ 安装成功后会提示服务安装成功。  
+</code></pre></li>
+<li><p>6： 新建data文件夹</p>
+<pre><code>MySQL数据库在升级到5.7版本后，和之前的版本有些不一样，没有data文件夹。 
+ 安装好MySQL5.7后，打开cmd命令窗口，并且进入到MySQL安装目录中的bin目录，
+ 输入如下命令回车即可： mysqld --initialize-insecure --user=mysql
+ 执行完上面命令后，MySQL会自建一个data文件夹，并且建好默认数据库。
+</code></pre></li>
+<li><p>7：启动mysql服务</p>
+<pre><code>运行cmd,从控制台进入到mysql解压目录下的 bin 目录下：
+ 输入：net start mysql
+</code></pre></li>
+<li><p>8：修改 root 账号的密码     </p>
+<pre><code>刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：111222    
+ D:\mysql-5.7.17-winx64\bin&gt;mysql –u root -p
+ mysql&gt;show databases;
+ mysql&gt;use mysql;
+ mysql&gt;update user set authentication_string =password(&quot;111222&quot;) where user=&quot;root&quot;;
+ mysql&gt;flush privileges; 
+ mysql&gt;quit
+</code></pre></li>
+<li><p>9：修改my.ini文件，在[mysqld]下加入如下命令：skip-grant-tables，然后重启mysql服务</p>
+</li>
+<li><p>10：编辑my.ini文件删掉skip-grant-tables 这一行，然后重启mysql，否则mysql仍能免密码登录</p>
+</li>
+</ul>
+<blockquote>
+<p>过程果然好长，我都不确定是不是完全写对了，好羞耻额~~不过我自己是成功了的。关于是否原创这个问题，这篇文章是我自己在翻看了很多人的博客，动手试了很多次各种出错的基础上自己总结出来的，我确定我没有找到一篇完全按着操作能成功的，至少我没找到，当然也借鉴了别人的流程，因为不会才要google啊~而且这种文章很多会重复啊，正确操作不都是一样的嘛，只有各种错才是不一样的~</p>
+</blockquote>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'unaeyre';
+    
+    var disqus_url = 'http://UnaEyre.coding.me/2016/12/21/mysql-5-7-17-winx64的安装配置/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//unaeyre.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
