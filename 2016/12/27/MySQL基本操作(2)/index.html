@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL基本操作(2) | UnaEyre</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="MySQL基本操作(2)," />
+  
+
+  <meta name="description" content="USE   打开数据库    USE 数据库名称;    显示当前打开的数据库    SELECT DATABASE();
+创建数据表   CREATE TABLE [IF NOT EXISTS] table_name (    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;column_name data_type,    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;….)
+查看数据表列表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基本操作(2)">
+<meta property="og:url" content="http://UnaEyre.coding.me/2016/12/27/MySQL基本操作(2)/index.html">
+<meta property="og:site_name" content="UnaEyre">
+<meta property="og:description" content="USE   打开数据库    USE 数据库名称;    显示当前打开的数据库    SELECT DATABASE();
+创建数据表   CREATE TABLE [IF NOT EXISTS] table_name (    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;column_name data_type,    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;….)
+查看数据表列表">
+<meta property="og:updated_time" content="2016-12-27T05:56:55.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL基本操作(2)">
+<meta name="twitter:description" content="USE   打开数据库    USE 数据库名称;    显示当前打开的数据库    SELECT DATABASE();
+创建数据表   CREATE TABLE [IF NOT EXISTS] table_name (    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;column_name data_type,    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;….)
+查看数据表列表">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/una.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#USE"><span class="toc-text">USE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据表"><span class="toc-text">创建数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看数据表列表"><span class="toc-text">查看数据表列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看数据表结构"><span class="toc-text">查看数据表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INSERT"><span class="toc-text">INSERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SELECT"><span class="toc-text">SELECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空值与非空"><span class="toc-text">空值与非空</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AUTO-INCREMENT"><span class="toc-text">AUTO_INCREMENT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PRIMARY-KEY"><span class="toc-text">PRIMARY KEY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNIQUE-KEY"><span class="toc-text">UNIQUE KEY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DEFAULT"><span class="toc-text">DEFAULT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOREIGN-KEYp"><span class="toc-text">FOREIGN KEYp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑数据表的-默认存储引擎"><span class="toc-text">编辑数据表的 默认存储引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外键约束的参照操作"><span class="toc-text">外键约束的参照操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改数据表"><span class="toc-text">修改数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加主键约束"><span class="toc-text">添加主键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加唯一约束"><span class="toc-text">添加唯一约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-删除默认约束"><span class="toc-text">添加/删除默认约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除主键约束"><span class="toc-text">删除主键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改列定义"><span class="toc-text">修改列定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据表更名"><span class="toc-text">数据表更名</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-MySQL基本操作(2)" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">MySQL基本操作(2)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.12.27</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>UnaEyre</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://unaeyre.coding.me/2016/12/27/MySQL基本操作(2)/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="USE"><a href="#USE" class="headerlink" title="USE"></a>USE</h3><p>   打开数据库<br>    USE 数据库名称;<br>    显示当前打开的数据库<br>    SELECT DATABASE();</p>
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><p>   CREATE TABLE [IF NOT EXISTS] table_name (<br>    &nbsp;&nbsp;&nbsp;&nbsp;column_name data_type,<br>    &nbsp;&nbsp;&nbsp;&nbsp;….<br>)</p>
+<h3 id="查看数据表列表"><a href="#查看数据表列表" class="headerlink" title="查看数据表列表"></a>查看数据表列表</h3><p>   SHOW TABLES [FROM db_name] [LIKE ‘pattern’ | WHERE expr]</p>
+<h3 id="查看数据表结构"><a href="#查看数据表结构" class="headerlink" title="查看数据表结构"></a>查看数据表结构</h3><p>   SHOW COLUMNS FROM tbl_name</p>
+<h3 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h3><p>   INSERT [INTO] tbl_name [(col_name,…)] VALUES(val,…)</p>
+<h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><p>   记录查找<br>    SELECT expr,… FROM tbl_name</p>
+<h3 id="空值与非空"><a href="#空值与非空" class="headerlink" title="空值与非空"></a>空值与非空</h3><p>   NULL,字段值可以为空<br>    NOT NULL,字段值禁止为空</p>
+<h3 id="AUTO-INCREMENT"><a href="#AUTO-INCREMENT" class="headerlink" title="AUTO_INCREMENT"></a>AUTO_INCREMENT</h3><p>   自动编号，且必须与主键组合使用<br>    默认情况下，初始值为1，每次的增量为1</p>
+<h3 id="PRIMARY-KEY"><a href="#PRIMARY-KEY" class="headerlink" title="PRIMARY KEY"></a>PRIMARY KEY</h3><p>   主键约束<br>    每张数据表只能存在一个主键<br>    主键保证记录的唯一性<br>    主键自动为NOT NULL</p>
+<h3 id="UNIQUE-KEY"><a href="#UNIQUE-KEY" class="headerlink" title="UNIQUE KEY"></a>UNIQUE KEY</h3><p>   唯一约束<br>    唯一约束可以保证记录的唯一性<br>    唯一约束的字段可以为空值(NULL)<br>    每张数据表可以存在多个唯一约束</p>
+<h3 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title="DEFAULT"></a>DEFAULT</h3><p>   默认值<br>    当插入记录时，如果没有明确为字段赋值，则自动赋予默认值</p>
+<h3 id="FOREIGN-KEYp"><a href="#FOREIGN-KEYp" class="headerlink" title="FOREIGN KEYp"></a>FOREIGN KEYp</h3><p>   保持数据一致性，完整性<br>    实现一对一或一对多关系</p>
+<h3 id="编辑数据表的-默认存储引擎"><a href="#编辑数据表的-默认存储引擎" class="headerlink" title="编辑数据表的 默认存储引擎"></a>编辑数据表的 默认存储引擎</h3><p>   mysql配置文件<br>    default-storage-engine=INNODB</p>
+<h3 id="外键约束的参照操作"><a href="#外键约束的参照操作" class="headerlink" title="外键约束的参照操作"></a>外键约束的参照操作</h3><p>   CASCADE:从父表删除或更新且自动删除或更新子表中匹配的行<br>    SET NULL:从父表删除或更行行，并设置子表中外键列为NULL，如果使用该选项，必须保证子表列没有指定NOT NULL<br>    RESTRICT;拒绝对父表的删除或更新操作<br>    NO ACTION:标准SQL的关键字，在MySQL中与RESTRICT相同</p>
+<h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><p>   添加单列<br>    ALTER TABLE tbl_name ADD [COLUMN] col_name column_definition [FIRST | AFTER col_name]<br>    添加多列<br>    ALTER TABLE tbl_name ADD [column] (col_name column_definition,…)<br>    删除列<br>    ALTER TABLE tbl_name DROP [COLUMN] col_name</p>
+<h3 id="添加主键约束"><a href="#添加主键约束" class="headerlink" title="添加主键约束"></a>添加主键约束</h3><p>   ALTER TABLE tbl_name ADD [CONSTRAINT] [symbol]] PRIMARY KEY [index_type] (index_col_name,…)</p>
+<h3 id="添加唯一约束"><a href="#添加唯一约束" class="headerlink" title="添加唯一约束"></a>添加唯一约束</h3><p>   ALTER TABLE tbl_name ADD [CONSTRAINT[symbol]] UNIQUE [INDEX|KEY] [index_name] [index_type] (index_col_name,…)</p>
+<h3 id="添加-删除默认约束"><a href="#添加-删除默认约束" class="headerlink" title="添加/删除默认约束"></a>添加/删除默认约束</h3><p>   ALTER TABLE tbl_name ALTER [COLUMN] col_name {SET DEFAULT literal | DROP DEFAULT}</p>
+<h3 id="删除主键约束"><a href="#删除主键约束" class="headerlink" title="删除主键约束"></a>删除主键约束</h3><p>   ALTER TABLE tbl_name DROP PRIMARY KEY<br>    删除唯一约束<br>    ALTER TABLE tbl_name DROP {INDEX|KEY} index_name<br>    删除外键约束<br>    ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol</p>
+<h3 id="修改列定义"><a href="#修改列定义" class="headerlink" title="修改列定义"></a>修改列定义</h3><p>   ALTER TABLE tbl_name MODIFY [COLUMN] col_name column_definition [FIRST | AFTER col_name]<br>    修改列名称<br>    ALTER TABLE tbl_name CHANGE [COLUMN] old_col_name new_col_name column_definition [FIRST | AFTER col_name]</p>
+<h3 id="数据表更名"><a href="#数据表更名" class="headerlink" title="数据表更名"></a>数据表更名</h3><p>   方法1：<br>    ALTER TABLE tbl_name RENAME [TO|AS] new_tbl_name<br>    方法2：<br>    RENAME TABLE tbl_name TO new_tbl_name [,tbl_name2 TO new_tbl_name2] …</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'unaeyre';
+    
+    var disqus_url = 'http://UnaEyre.coding.me/2016/12/27/MySQL基本操作(2)/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//unaeyre.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
