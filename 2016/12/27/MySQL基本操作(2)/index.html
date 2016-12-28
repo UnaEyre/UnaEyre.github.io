@@ -25,7 +25,7 @@
 <meta property="og:description" content="USE   打开数据库    USE 数据库名称;    显示当前打开的数据库    SELECT DATABASE();
 创建数据表   CREATE TABLE [IF NOT EXISTS] table_name (    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;column_name data_type,    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;….)
 查看数据表列表">
-<meta property="og:updated_time" content="2016-12-28T06:14:59.006Z">
+<meta property="og:updated_time" content="2016-12-28T06:18:35.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基本操作(2)">
 <meta name="twitter:description" content="USE   打开数据库    USE 数据库名称;    显示当前打开的数据库    SELECT DATABASE();
@@ -198,7 +198,7 @@
 <h3 id="查看数据表创建指令"><a href="#查看数据表创建指令" class="headerlink" title="查看数据表创建指令"></a>查看数据表创建指令</h3><p>   SHOW CREATE TABLE tbl_name</p>
 <h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><p>   FOREIGN KEY (col_name) REFERENCES parent_tbl_name (col_name)</p>
 <h3 id="显示索引"><a href="#显示索引" class="headerlink" title="显示索引"></a>显示索引</h3><p>   SHOW INDEXES FROM tbl_name<br>   SHOW INDEXES FROM tbl_name\G(以网格形式显示)</p>
-<h3 id="外键约束的参照操作"><a href="#外键约束的参照操作" class="headerlink" title="外键约束的参照操作"></a>外键约束的参照操作</h3><p>   CASCADE:从父表删除或更新且自动删除或更新子表中匹配的行<br>       FOREIGN KEY (col_name) REFERENCES parent_tbl_name (col_name) ON DELETE CASCADE<br>    SET NULL:从父表删除或更新行，并设置子表中外键列为NULL，如果使用该选项，必须保证子表列没有指定NOT NULL<br>    RESTRICT:拒绝对父表的删除或更新操作<br>    NO ACTION:标准SQL的关键字，在MySQL中与RESTRICT相同                    </p>
+<h3 id="外键约束的参照操作"><a href="#外键约束的参照操作" class="headerlink" title="外键约束的参照操作"></a>外键约束的参照操作</h3><p>   CASCADE:从父表删除或更新且自动删除或更新子表中匹配的行<br>    FOREIGN KEY (col_name) REFERENCES parent_tbl_name (col_name) ON DELETE CASCADE<br>    SET NULL:从父表删除或更新行，并设置子表中外键列为NULL，如果使用该选项，必须保证子表列没有指定NOT NULL<br>    RESTRICT:拒绝对父表的删除或更新操作<br>    NO ACTION:标准SQL的关键字，在MySQL中与RESTRICT相同                    </p>
 <h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><p>   添加单列<br>    ALTER TABLE tbl_name ADD [COLUMN] col_name column_definition [FIRST | AFTER col_name]<br>    添加多列<br>    ALTER TABLE tbl_name ADD [COLUMN] (col_name column_definition,…)<br>    删除列<br>    ALTER TABLE tbl_name DROP [COLUMN] col_name<br>    删除多列用逗号分隔<br>    ALTER TABLE tbl_name DROP [COLUMN] col_name,DROP [COLUMN] col_name,…</p>
 <h3 id="添加主键约束"><a href="#添加主键约束" class="headerlink" title="添加主键约束"></a>添加主键约束</h3><p>   ALTER TABLE tbl_name ADD [CONSTRAINT] [symbol]] PRIMARY KEY [index_type] (index_col_name,…)</p>
 <h3 id="添加唯一约束"><a href="#添加唯一约束" class="headerlink" title="添加唯一约束"></a>添加唯一约束</h3><p>   ALTER TABLE tbl_name ADD [CONSTRAINT[symbol]] UNIQUE [INDEX|KEY] [index_name] [index_type] (index_col_name,…)</p>
