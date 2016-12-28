@@ -23,7 +23,7 @@ mysql目录结构   bin目录，存储可执行文件    data目录，存储数�
 <meta property="og:site_name" content="UnaEyre">
 <meta property="og:description" content="如果以前安装过mysql，卸载重装，很可能会碰到”A Windows service with the name MySQL already exists.“这样的提示。即服务已经存在。解决这个问题，可以在命令行输入以下命令：   sc delete mysql    重启就可以了   
 mysql目录结构   bin目录，存储可执行文件    data目录，存储数据文件    docs，文档">
-<meta property="og:updated_time" content="2016-12-26T09:35:36.214Z">
+<meta property="og:updated_time" content="2016-12-28T04:38:24.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基本操作(1)">
 <meta name="twitter:description" content="如果以前安装过mysql，卸载重装，很可能会碰到”A Windows service with the name MySQL already exists.“这样的提示。即服务已经存在。解决这个问题，可以在命令行输入以下命令：   sc delete mysql    重启就可以了   
@@ -181,7 +181,7 @@ mysql目录结构   bin目录，存储可执行文件    data目录，存储数�
     
       <p>如果以前安装过mysql，卸载重装，很可能会碰到”A Windows service with the name MySQL already exists.“这样的提示。即服务已经存在。解决这个问题，可以在命令行输入以下命令：<br>   sc delete mysql    重启就可以了   </p>
 <h3 id="mysql目录结构"><a href="#mysql目录结构" class="headerlink" title="mysql目录结构"></a>mysql目录结构</h3><p>   bin目录，存储可执行文件<br>    data目录，存储数据文件<br>    docs，文档<br>    include目录存储包含的头文件<br>    lib目录，存储库文件<br>    share，错误消息和字符集文件</p>
-<h3 id="mysql的配置选项"><a href="#mysql的配置选项" class="headerlink" title="mysql的配置选项"></a>mysql的配置选项</h3><p>[client]<br>    default-character-set=utf8<br>    [mysqld]<br>    character-set-server=utf8</p>
+<h3 id="mysql的配置选项"><a href="#mysql的配置选项" class="headerlink" title="mysql的配置选项"></a>mysql的配置选项</h3><p>修改编码方式<br>[client]<br>    default-character-set=utf8<br>    [mysqld]<br>    character-set-server=utf8</p>
 <h3 id="关闭-启动mysql服务"><a href="#关闭-启动mysql服务" class="headerlink" title="关闭/启动mysql服务"></a>关闭/启动mysql服务</h3><p>   启动mysql服务<br>    net start mysql<br>    关闭mysql服务<br>    net stop mysql</p>
 <h3 id="使用mysql"><a href="#使用mysql" class="headerlink" title="使用mysql"></a>使用mysql</h3><ul>
 <li>mysql登录<br>  mysql参数</li>
