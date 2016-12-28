@@ -7,41 +7,67 @@
 <head>
   <meta charset="utf-8">
   
-  <title>缺陷管理流程 | UnaEyre</title>
+  <title>测试用例设计 | UnaEyre</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="缺陷管理流程," />
+    <meta name="keywords" content="测试用例设计," />
   
 
-  <meta name="description" content="缺陷管理流程软件缺陷的生命周期
-缺陷基本管理流程
-测试人员填写bug并提交，此时bug的状态为new
-开发负责人确定bug是否有效，是的话，bug的状态为open，并分配给开发人员，否的话，bug的状态为rejected
-开发人员修改bug，修改完成并进行单元测试后，bug的状态变为fixed，同时说明修改方法
-当bug的状态变为fixed时，测试人员打开该bug，开始对该bug进行回归测试，如果">
+  <meta name="description" content="测试用例
+测试用例指的是在测试执行之前设计的一套详细的测试方案，包括测试环境、测试步骤、测试数据和预期结果。
+编写测试用例的唯一标准是用户需求，具体的参考资料是需求规格说明书。
+测试用例的因素
+测试用例分类
+黑盒测试用例设计方法
+
+等价类划分的步骤
+先考虑输入数据的数据类型（合法和非法的）
+再考虑数据范围（合法类型中的合法区间和非法区间）
+画出示意图，区分等价类
+
+边界值划分设计方法
+确定边界情况">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缺陷管理流程">
-<meta property="og:url" content="http://UnaEyre.coding.me/2016/12/21/缺陷管理流程/index.html">
+<meta property="og:title" content="测试用例设计">
+<meta property="og:url" content="http://UnaEyre.coding.me/2016/12/28/测试用例设计/index.html">
 <meta property="og:site_name" content="UnaEyre">
-<meta property="og:description" content="缺陷管理流程软件缺陷的生命周期
-缺陷基本管理流程
-测试人员填写bug并提交，此时bug的状态为new
-开发负责人确定bug是否有效，是的话，bug的状态为open，并分配给开发人员，否的话，bug的状态为rejected
-开发人员修改bug，修改完成并进行单元测试后，bug的状态变为fixed，同时说明修改方法
-当bug的状态变为fixed时，测试人员打开该bug，开始对该bug进行回归测试，如果">
-<meta property="og:image" content="http://unaeyre.coding.me/store/images/bug-life-cycle.png">
-<meta property="og:updated_time" content="2016-12-22T07:39:33.927Z">
+<meta property="og:description" content="测试用例
+测试用例指的是在测试执行之前设计的一套详细的测试方案，包括测试环境、测试步骤、测试数据和预期结果。
+编写测试用例的唯一标准是用户需求，具体的参考资料是需求规格说明书。
+测试用例的因素
+测试用例分类
+黑盒测试用例设计方法
+
+等价类划分的步骤
+先考虑输入数据的数据类型（合法和非法的）
+再考虑数据范围（合法类型中的合法区间和非法区间）
+画出示意图，区分等价类
+
+边界值划分设计方法
+确定边界情况">
+<meta property="og:image" content="http://unaeyre.coding.me/store/images/testing-case-factor.png">
+<meta property="og:image" content="http://unaeyre.coding.me/store/images/testing-case-classification.png">
+<meta property="og:image" content="http://unaeyre.coding.me/store/images/testing-case-method.png">
+<meta property="og:updated_time" content="2016-12-28T03:14:39.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="缺陷管理流程">
-<meta name="twitter:description" content="缺陷管理流程软件缺陷的生命周期
-缺陷基本管理流程
-测试人员填写bug并提交，此时bug的状态为new
-开发负责人确定bug是否有效，是的话，bug的状态为open，并分配给开发人员，否的话，bug的状态为rejected
-开发人员修改bug，修改完成并进行单元测试后，bug的状态变为fixed，同时说明修改方法
-当bug的状态变为fixed时，测试人员打开该bug，开始对该bug进行回归测试，如果">
-<meta name="twitter:image" content="http://unaeyre.coding.me/store/images/bug-life-cycle.png">
+<meta name="twitter:title" content="测试用例设计">
+<meta name="twitter:description" content="测试用例
+测试用例指的是在测试执行之前设计的一套详细的测试方案，包括测试环境、测试步骤、测试数据和预期结果。
+编写测试用例的唯一标准是用户需求，具体的参考资料是需求规格说明书。
+测试用例的因素
+测试用例分类
+黑盒测试用例设计方法
+
+等价类划分的步骤
+先考虑输入数据的数据类型（合法和非法的）
+再考虑数据范围（合法类型中的合法区间和非法区间）
+画出示意图，区分等价类
+
+边界值划分设计方法
+确定边界情况">
+<meta name="twitter:image" content="http://unaeyre.coding.me/store/images/testing-case-factor.png">
 
   
 
@@ -164,20 +190,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">Posts List</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#缺陷管理流程"><span class="toc-text">缺陷管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件缺陷的生命周期"><span class="toc-text">软件缺陷的生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缺陷基本管理流程"><span class="toc-text">缺陷基本管理流程</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试用例"><span class="toc-text">测试用例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#等价类划分的步骤"><span class="toc-text">等价类划分的步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#边界值划分设计方法"><span class="toc-text">边界值划分设计方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误推测方法基本思想"><span class="toc-text">错误推测方法基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#因果图法"><span class="toc-text">因果图法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正交试验设计法"><span class="toc-text">正交试验设计法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景图"><span class="toc-text">场景图</span></a></li></ol></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-缺陷管理流程" class="article article-type-post" itemprop="blogPost">
+   <article id="post-测试用例设计" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">缺陷管理流程</h1>
+    <h1 class="post-title">测试用例设计</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2016.12.21</span>
+        <span>2016.12.28</span>
       </span>
 
       
@@ -198,7 +224,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://unaeyre.coding.me/2016/12/21/缺陷管理流程/#disqus_thread"></a>
+          <a href="http://unaeyre.coding.me/2016/12/28/测试用例设计/#disqus_thread"></a>
         </span>
       
 
@@ -207,13 +233,33 @@
 
   <div class="article-content">
     
-      <h1 id="缺陷管理流程"><a href="#缺陷管理流程" class="headerlink" title="缺陷管理流程"></a>缺陷管理流程</h1><h3 id="软件缺陷的生命周期"><a href="#软件缺陷的生命周期" class="headerlink" title="软件缺陷的生命周期"></a>软件缺陷的生命周期</h3><p><img src="http://unaeyre.coding.me/store/images/bug-life-cycle.png" alt="Bug生命周期"></p>
-<h4 id="缺陷基本管理流程"><a href="#缺陷基本管理流程" class="headerlink" title="缺陷基本管理流程"></a>缺陷基本管理流程</h4><ul>
-<li>测试人员填写bug并提交，此时bug的状态为new</li>
-<li>开发负责人确定bug是否有效，是的话，bug的状态为open，并分配给开发人员，否的话，bug的状态为rejected</li>
-<li>开发人员修改bug，修改完成并进行<strong>单元测试</strong>后，bug的状态变为fixed，同时说明修改方法</li>
-<li>当bug的状态变为fixed时，测试人员打开该bug，开始对该bug进行回归测试，如果该bug回归测试通过，则状态变为closed。否则bug的状态变为reopen，同时说明reopen、closed状态变化的原因或者操作过程</li>
-<li>如果回归测试通过，可是修改的同时又引入新的bug，则重新提交bug，状态为open，开发人员修改bug，省略了开发负责人的确认，因为既然是回归测试说明之前已经确定是bug了</li>
+      <h3 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h3><ul>
+<li>测试用例指的是在测试执行之前设计的一套详细的测试方案，包括测试环境、测试步骤、测试数据和预期结果。</li>
+<li>编写测试用例的唯一标准是<strong>用户需求</strong>，具体的参考资料是<strong>需求规格说明书</strong>。</li>
+<li>测试用例的因素<br><img src="http://unaeyre.coding.me/store/images/testing-case-factor.png" alt="测试用例因素"></li>
+<li>测试用例分类<br><img src="http://unaeyre.coding.me/store/images/testing-case-classification.png" alt="测试用例分类"></li>
+<li>黑盒测试用例设计方法<br><img src="http://unaeyre.coding.me/store/images/testing-case-method.png" alt="黑盒测试用例设计方法"></li>
+</ul>
+<h4 id="等价类划分的步骤"><a href="#等价类划分的步骤" class="headerlink" title="等价类划分的步骤"></a>等价类划分的步骤</h4><ul>
+<li>先考虑输入数据的数据类型（合法和非法的）</li>
+<li>再考虑数据范围（合法类型中的合法区间和非法区间）</li>
+<li>画出示意图，区分等价类</li>
+</ul>
+<h4 id="边界值划分设计方法"><a href="#边界值划分设计方法" class="headerlink" title="边界值划分设计方法"></a>边界值划分设计方法</h4><ul>
+<li>确定边界情况（输入或输出等价类的边界）</li>
+<li>选取正好等于、刚刚大于或刚刚小于边界值作为测试数据</li>
+</ul>
+<h4 id="错误推测方法基本思想"><a href="#错误推测方法基本思想" class="headerlink" title="错误推测方法基本思想"></a>错误推测方法基本思想</h4><ul>
+<li>利用直觉和经验猜测出出错的可能类型，列举出程序中所有可能的错误和容易发生错误的情况的清单，然后根据清单编写测试用例</li>
+</ul>
+<h4 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h4><ul>
+<li>比较适合输入条件比较多的情况，测试所有的输入条件的排列组合，所谓的原因就是输入，结果就是输出</li>
+</ul>
+<h4 id="正交试验设计法"><a href="#正交试验设计法" class="headerlink" title="正交试验设计法"></a>正交试验设计法</h4><ul>
+<li>是一种成对测试交互的系统的统计方法，它提供了一种能对所有变量对的组合进行典型覆盖的方法。可以从大量的试验点中挑选适量的、有代表性的点，利用“正交表”，合理的安排试验的一种科学的试验设计方法</li>
+</ul>
+<h4 id="场景图"><a href="#场景图" class="headerlink" title="场景图"></a>场景图</h4><ul>
+<li>用例场景是用来描述流经用例路径的过程，这个过程从开始到结束遍历用例中所有基本流和备选流</li>
 </ul>
 
     
@@ -327,7 +373,7 @@
   <script>
     var disqus_shortname = 'unaeyre';
     
-    var disqus_url = 'http://UnaEyre.coding.me/2016/12/21/缺陷管理流程/';
+    var disqus_url = 'http://UnaEyre.coding.me/2016/12/28/测试用例设计/';
     
     (function(){
       var dsq = document.createElement('script');
