@@ -15,13 +15,19 @@
     <meta name="keywords" content="MySQL基本操作(3)," />
   
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="INSERT
+插入记录INSERT [INTO] tbl_name [(col_name,…)] {VALUES | VALUE}({expr | DEFAULT},…),(…),…INSERT [INTO] tbl_name SET col_name={expr | DEFAULT},…说明：与第一种方式的区别在于，此方法可以使用子查询（SubQuery），一次只能插入一条记录。INSERT [">
+<meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基本操作(3)">
 <meta property="og:url" content="http://UnaEyre.coding.me/2016/12/28/MySQL基本操作(3)/index.html">
 <meta property="og:site_name" content="UnaEyre">
-<meta property="og:updated_time" content="2016-12-28T04:13:30.994Z">
+<meta property="og:description" content="INSERT
+插入记录INSERT [INTO] tbl_name [(col_name,…)] {VALUES | VALUE}({expr | DEFAULT},…),(…),…INSERT [INTO] tbl_name SET col_name={expr | DEFAULT},…说明：与第一种方式的区别在于，此方法可以使用子查询（SubQuery），一次只能插入一条记录。INSERT [">
+<meta property="og:updated_time" content="2016-12-28T06:55:34.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基本操作(3)">
+<meta name="twitter:description" content="INSERT
+插入记录INSERT [INTO] tbl_name [(col_name,…)] {VALUES | VALUE}({expr | DEFAULT},…),(…),…INSERT [INTO] tbl_name SET col_name={expr | DEFAULT},…说明：与第一种方式的区别在于，此方法可以使用子查询（SubQuery），一次只能插入一条记录。INSERT [">
 
   
 
@@ -142,6 +148,11 @@
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#INSERT"><span class="toc-text">INSERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UPDATE"><span class="toc-text">UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE"><span class="toc-text">DELETE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SELECT"><span class="toc-text">SELECT</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
@@ -168,7 +179,29 @@
 
   <div class="article-content">
     
-      
+      <h3 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h3><ul>
+<li>插入记录<br>INSERT [INTO] tbl_name [(col_name,…)] {VALUES | VALUE}({expr | DEFAULT},…),(…),…<br>INSERT [INTO] tbl_name SET col_name={expr | DEFAULT},…<br><strong>说明</strong>：与第一种方式的区别在于，此方法可以使用子查询（SubQuery），一次只能插入一条记录。<br>INSERT [INTO] tbl_name [(col_name,…)] SELECT…<br><strong>说明</strong>：此方法可以将查询结果插入到指定数据表</li>
+</ul>
+<h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><ul>
+<li>更新记录（单表更新）<br>UPDATE [LOW_PRIORITY] [IGNORE] table_reference SET col_name1={expr|DEFAULT} [,col_name=2{expr|DEFAULT}]…[WHERE where_condition]</li>
+</ul>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><ul>
+<li>删除记录（单表删除）<br>DELETE FROM tbl_name [WHERE where_condition]</li>
+</ul>
+<h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><ul>
+<li>查找记录</li>
+</ul>
+<pre>
+  SELECT select_expr [,select_expr...]
+  [
+      FORM table_references
+      [WHERE where_condition]
+      [GROUP BY {col_name | position} [ASC | DESC],...]
+      [HAVING where_condition]
+      [ORDER BY {col_name | expr | position} [ASC | DESC],...]
+      [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+  ]
+</pre>
     
   </div>
 </article>
@@ -188,7 +221,7 @@
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
+      <span id="close" class="btn-close">Close</span>
     </div>
     <hr>
     <div class="modal-body">
